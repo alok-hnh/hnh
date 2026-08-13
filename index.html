@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQLC2P562C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZQLC2P562C');
+</script>
     <meta charset="utf-8">
     <title>Redirecting... | Harbour & Hills</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=hk/index.html">
     <script type="text/javascript">
-        // Basic browser language-based client-side redirection
-        try {
-            var lang = (navigator.language || navigator.userLanguage).toLowerCase();
-            if (lang.indexOf('ca') !== -1) {
-                window.location.href = "ca/index.html";
-            } else if (lang.indexOf('in') !== -1) {
-                window.location.href = "in/index.html";
-            } else if (lang.indexOf('hk') !== -1 || lang.indexOf('zh') !== -1) {
-                window.location.href = "hk/index.html";
-            } else {
-                window.location.href = "hk/index.html";
+        (function() {
+            var target = 'hk/index.html';
+            
+            try {
+                // 1. Timezone detection (Synchronous & instant 0ms)
+                var tz = (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : '';
+                if (tz) {
+                    tz = tz.toLowerCase();
+                    if (tz.includes('calcutta') || tz.includes('kolkata') || tz.includes('india') || tz.includes('colombo') || tz.includes('karachi')) {
+                        target = 'in/index.html';
+                    } else if (tz.includes('toronto') || tz.includes('vancouver') || tz.includes('edmonton') || tz.includes('winnipeg') || tz.includes('halifax') || tz.includes('st_johns') || tz.includes('montreal')) {
+                        target = 'ca/index.html';
+                    } else if (tz.includes('new_york') || tz.includes('chicago') || tz.includes('denver') || tz.includes('los_angeles') || tz.includes('anchorage') || tz.includes('honolulu') || tz.includes('phoenix') || tz.includes('detroit') || tz.includes('indiana') || tz.includes('boise')) {
+                        target = 'us/index.html';
+                    } else if (tz.includes('hong_kong') || tz.includes('shanghai') || tz.includes('taipei') || tz.includes('macau') || tz.includes('singapore')) {
+                        target = 'hk/index.html';
+                    }
+                }
+            } catch(e) {}
+
+            // 2. Locale fallback if timezone was ambiguous
+            if (target === 'hk/index.html') {
+                try {
+                    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+                    if (lang.includes('-in') || lang === 'hi' || lang === 'gu' || lang === 'mr' || lang === 'ta' || lang === 'te' || lang === 'kn' || lang === 'bn' || lang === 'pa') {
+                        target = 'in/index.html';
+                    } else if (lang.includes('-ca')) {
+                        target = 'ca/index.html';
+                    } else if (lang.includes('-us')) {
+                        target = 'us/index.html';
+                    }
+                } catch(e) {}
             }
-        } catch (e) {
-            window.location.href = "hk/index.html";
-        }
+
+            // 3. Instant client-side redirect (0ms)
+            window.location.replace(target);
+        })();
     </script>
     <style>
         body {
@@ -45,9 +75,15 @@
     </style>
 </head>
 <body>
-    <div>
-        <p>Redirecting to your regional Harbour & Hills page...</p>
-        <p>If you are not redirected automatically, please select: <a href="hk/index.html">Go to Hong Kong Homepage</a></p>
+    <div style="max-width: 480px; padding: 20px;">
+        <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 8px;">Harbour &amp; Hills</p>
+        <p style="color: #a0aec0; margin-bottom: 24px;">Redirecting to your regional website...</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="us/index.html">USA</a>
+            <a href="ca/index.html">Canada</a>
+            <a href="hk/index.html">Hong Kong</a>
+            <a href="in/index.html">India</a>
+        </div>
     </div>
 </body>
 </html>

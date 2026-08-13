@@ -1,6 +1,6 @@
 # Workspace Rules: Static Page Cloning Workflow & Guidelines
 
-When cloning live pages (e.g. from `harbourandhills.com`) into the regional subfolders (`usa/`, `hk/`, `in/`), follow these exact rules to ensure pages load successfully and match the live layout:
+When cloning live pages (e.g. from `harbourandhills.com`) into the regional subfolders (`us/`, `hk/`, `in/`, `ca/`), follow these exact rules to ensure pages load successfully and match the live layout:
 
 ## 1. Bypassing Geo-IP Redirection
 - Live URLs automatically redirect to regional folders based on IP.

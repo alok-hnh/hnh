@@ -63,7 +63,7 @@ def validate_html_page(filepath, is_homepage=False):
         errors.append("Missing location link to India (in/index.html or relative).")
         
     # Check if there are external links to self page that should be relative
-    self_links = re.findall(r'href="https://(?:www\.)?harbourandhills\.com/(?:usa|hk|in)/[^"]+"', content)
+    self_links = re.findall(r'href="https://(?:www\.)?harbourandhills\.com/(?:us|usa|hk|in|ca)/[^"]+"', content)
     if self_links:
          print(f"Info: Found {len(self_links)} self-referencing absolute link tags in body/nav.")
          
