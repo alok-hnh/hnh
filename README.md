@@ -2,7 +2,7 @@
 
 # Harbour &amp; Hills
 
-**Corporate website — static, multi-region, zero build step.**
+**Cross-border payment solutions.** *One world, one money.*
 
 `Hong Kong` · `India` · `United States` · `Canada`
 
@@ -10,7 +10,26 @@
 
 ---
 
-## Overview
+## About Harbour &amp; Hills
+
+Harbour &amp; Hills is a cross-border payment provider based in Hong Kong's financial district, simplifying global commerce for businesses of all sizes. Founded by industry experts and drawing on 15 years of delivering payments worldwide, the firm pairs technology with deep operational experience to remove the friction from international trade.
+
+**Mission** — simplify international payments so clients can grow their businesses without borders.
+
+**Vision** — become the leading provider of cross-border payment solutions, building trust and opening business opportunities through innovation.
+
+### What we do
+
+- **Cross-border payment processing** — multi-currency settlement, materially faster than traditional banking rails, at rates built for SMEs and enterprises alike
+- **Multi-currency accounts** — hold and manage funds in several currencies without opening a bank account for each
+- **Fraud prevention &amp; risk management** — real-time monitoring and detection, with assessment tools that surface threats before they land
+- **FX services** — competitive rates and real-time conversion on international transactions
+
+Payments run on **H Intelligence** — the company's legacy platform extended with AI to speed up and secure transaction processing — alongside the unified **Edge+** platform.
+
+---
+
+## About this repository
 
 A hand-built static site: plain HTML, one stylesheet, one script. No framework, no bundler, no `node_modules`. Every page ships exactly what the browser receives.
 
